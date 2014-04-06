@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap 3 Lightbox</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="_css/bootstrap.min.css" rel="stylesheet">
+        <link href="_css/ekko-lightbox.css" rel="stylesheet">
+        <link href="_css/main.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">TEAM 1: Inkhorn</div>
+            <div>UX Project 4</div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h3 class="page-header" id="image-gallery">Sketches</h3>
+                    <p>Something to go here</p>
+                    <p>Here too if we want to</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <a href="_img/1.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/1.jpg" class="img-responsive">
+                                Framework - Main page
+                                </a>
+
+                                <a href="_img/2.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/2.jpg" class="img-responsive">
+                                Search & Notifications
+                                </a>
+                                <a href="_img/3.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Someone lost their dress" class="col-sm-4">
+                                    <img src="_img/3.jpg" class="img-responsive">
+                                Menus
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="_img/4.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/4.jpg" class="img-responsive">
+                                Rough Drawing of main page
+                                </a>
+                                <a href="_img/5.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Cool bottle" data-footer="Now fill it with whiskey" class="col-sm-4">
+                                    <img src="_img/5.jpg" class="img-responsive">
+                                Storyboards of interactions
+                                </a>
+                                <a href="_img/6.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/6.jpg" class="img-responsive">
+                                Ecological overview
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="_img/7.jpg" data-toggle="lightbox" data-gallery="multiimages" data-footer="Big ass waterfall- using footer instead of title" class="col-sm-4">
+                                    <img src="_img/7.jpg" class="img-responsive">
+                                Externa/ Social
+                                </a>
+                                <a href="_img/8.jpg" data-toggle="lightbox" data-gallery="multiimages" data-title="Cool bottle" data-footer="Now fill it with whiskey" class="col-sm-4">
+                                    <img src="_img/8.jpg" class="img-responsive">
+                                Mobile Interactions
+                                </a>
+                                <a href="_img/9.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/9.jpg" class="img-responsive">
+                                Timers and Goals
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="_img/10.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/10.jpg" class="img-responsive">
+                                Search by garden
+                                </a>
+                                <a href="_img/11.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/11.jpg" class="img-responsive">
+                                Communications
+                                </a>
+                                <a href="_img/12.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/12.jpg" class="img-responsive">
+                                Lists
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="_img/13.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/13.jpg" class="img-responsive">
+                                Planning charts
+                                </a>
+
+                                <a href="_img/14.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/14.jpg" class="img-responsive">
+                                Statistics
+                                </a>
+
+                                <a href="_img/15.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/15.jpg" class="img-responsive">
+                                 Contacts
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href="_img/16.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/16.jpg" class="img-responsive">
+                                Potential Suggestions & Networks
+                                </a>
+
+                                <a href="_img/17.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/17.jpg" class="img-responsive">
+                                Menu Bar
+                                </a>
+
+<!--                                 <a href="_img/18.jpg" data-toggle="lightbox" class="col-sm-4">
+                                    <img src="_img/18.jpg" class="img-responsive">
+                                Menu Bar
+                                </a>
+ -->                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="_js/bootstrap.min.js"></script>
+        <script src="_js/ekko-lightbox.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function ($) {
+                // delegate calls to data-toggle="lightbox"
+                $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                    event.preventDefault();
+                    return $(this).ekkoLightbox({
+                        onShown: function() {
+                            if (window.console) {
+                                return console.log('Checking our the events huh?');
+                            }
+                        }
+                    });
+                });
+
+                //Programatically call
+                $('#open-image').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+                $('#open-youtube').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+
+            });
+        </script>
+    </body>
+</html>
