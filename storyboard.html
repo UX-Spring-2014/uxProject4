@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<title>Bootstrap 3 Lightbox</title>
+
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+				<link href="_css/bootstrap.min.css" rel="stylesheet">
+				<link href="_css/ekko-lightbox.css" rel="stylesheet">
+				<link href="_css/main.css" rel="stylesheet">
+
+		</head>
+		<body>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="index.html">Team 1 - UX Project 4</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="sketches.html">Sketches</a></li>
+							<li><a href="storyboard.html">Storyboard</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+
+				<div class="container">
+						<div class="row">
+								<div class="col-md-12">
+
+										<h3 class="page-header" id="image-gallery">Storyboard</h3>
+										<div class="row">
+												<div class="col-md-12">
+														<div class="row">
+																<div class="col-md-8">                                
+																		<a href="_img/storyboards/1.jpg" data-toggle="lightbox" >
+																				<img src="_img/storyboards/1.jpg" class="img-responsive">
+																		</a>
+																</div>
+																<div class="col-md-4">
+																		Framework - Main page
+																</div>
+														</div>
+														<hr>
+														<div class="row">
+																<div class="col-md-8">                                
+																		<a href="_img/storyboards/1.jpg" data-toggle="lightbox" >
+																				<img src="_img/storyboards/1.jpg" class="img-responsive">
+																		</a>
+																</div>
+																<div class="col-md-4">
+																		Framework - Main page
+																</div>
+														</div>
+														<hr>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+
+				<script src="//code.jquery.com/jquery.js"></script>
+				<script src="_js/bootstrap.min.js"></script>
+				<script src="_js/ekko-lightbox.js"></script>
+
+				<script type="text/javascript">
+						$(document).ready(function ($) {
+								// delegate calls to data-toggle="lightbox"
+								$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+										event.preventDefault();
+										return $(this).ekkoLightbox({
+												onShown: function() {
+														if (window.console) {
+																return console.log('Checking our the events huh?');
+														}
+												}
+										});
+								});
+
+								//Programatically call
+								$('#open-image').click(function (e) {
+										e.preventDefault();
+										$(this).ekkoLightbox();
+								});
+								$('#open-youtube').click(function (e) {
+										e.preventDefault();
+										$(this).ekkoLightbox();
+								});
+
+						});
+				</script>
+		</body>
+</html>

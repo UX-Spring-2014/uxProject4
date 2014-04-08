@@ -1,4 +1,8 @@
 /* i like padding - you can ignore this css. see the actual css / less files in the repository for styling the gallery navigation */
+hr {
+  border-top: 1px solid #000;
+}
+
 div.row > div > div.row {
     margin-bottom: 15px;
 }
